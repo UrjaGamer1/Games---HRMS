@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fill in the Blanks Game</title>
+    <style>
+        body {
+            font-family: 'Nunito Sans', sans-serif;
+            text-align: center;
+            background-color: #F7F8F9;
+        }
+        .container {
+            max-width: 800px;
+            margin: auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        .sentence {
+            margin: 20px 0;
+            font-size: 18px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+            border: 2px solid #2C89E5;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .correct {
+            background-color: #59A658;
+            color: white;
+        }
+        .incorrect {
+            background-color: #F9749F;
+            color: white;
+        }
+        button {
+            background-color: #E44C7D;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 18px;
+            margin-top: 20px;
+        }
+        button:hover {
+            background-color: #C13B66;
+        }
+    </style>
+</head>
+<body>
+    <h2>Fill in the Blanks Game</h2>
+    <p><strong>Instructions:</strong> Fill in the missing words in the sentences below. Click 'Submit' to check your answers.</p>
+    <div class="container">
+        <div class="sentence">
+            The <input type="text" id="answer1"> is the registered name of a business.
+        </div>
+        <div class="sentence">
+            Employees work in different <input type="text" id="answer2"> based on their roles.
+        </div>
+        <div class="sentence">
+            A company can have multiple <input type="text" id="answer3"> where its offices are located.
+        </div>
+        <div class="sentence">
+            The company follows structured <input type="text" id="answer4"> for employee salaries.
+        </div>
+        <div class="sentence">
+            Each <input type="text" id="answer5"> has a specific function in an organization.
+        </div>
+        <button onclick="checkAnswers()">Submit</button>
+    </div>
+    <script>
+        function checkAnswers() {
+            let correctAnswers = {
+                answer1: "Legal Entity",
+                answer2: "Departments",
+                answer3: "Locations",
+                answer4: "Pay Grades",
+                answer5: "Business Unit"
+            };
+            
+            for (let key in correctAnswers) {
+                let input = document.getElementById(key);
+                if (input.value.trim().toLowerCase() === correctAnswers[key].toLowerCase()) {
+                    input.classList.add("correct");
+                    input.classList.remove("incorrect");
+                } else {
+                    input.classList.add("incorrect");
+                    input.classList.remove("correct");
+                }
+            }
+        }
+    </script>
+</body>
+</html>
