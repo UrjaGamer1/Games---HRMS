@@ -1,60 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Game Dashboard</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Simple Game Dashboard</title>
     <style>
         body {
-            font-family: 'Nunito Sans', sans-serif;
-            text-align: center;
-            background-color: #F7F8F9;
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
+            background-color: #f0f0f0;
+            text-align: center;
         }
-        h1 {
-            margin: 40px 0 10px;
-            color: #2F2F2F;
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
         }
         .dashboard {
             display: flex;
-            flex-direction: column;
-            align-items: center;
+            flex-wrap: wrap;
+            justify-content: center;
             gap: 20px;
-            margin: 0 auto;
-            padding: 20px;
-            max-width: 600px;
+            max-width: 900px;
+            margin: 40px auto;
         }
-        .dashboard-button {
-            background-color: #4C9EEA;
-            color: #FFFFFF;
-            padding: 14px 28px;
-            border: none;
+        .card {
+            background-color: #fff;
+            width: 250px;
+            padding: 20px;
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
             border-radius: 8px;
-            cursor: pointer;
-            font-size: 16px;
-            font-weight: 600;
-            margin: 10px 0;
+            text-align: center;
+            transition: transform 0.2s ease;
+        }
+        .card:hover {
+            transform: translateY(-2px);
+        }
+        .card h3 {
+            margin: 0 0 10px;
+            font-size: 20px;
+        }
+        .card p {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+        }
+        .card a {
+            display: inline-block;
             text-decoration: none;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            padding: 10px 20px;
+            background-color: #4C9EEA;
+            color: #fff;
+            border-radius: 4px;
             transition: background-color 0.2s ease;
         }
-        .dashboard-button:hover {
+        .card a:hover {
             background-color: #2C89E5;
-        }
-        p {
-            color: #2F2F2F;
         }
     </style>
 </head>
 <body>
-    <h1>Game Dashboard</h1>
-    <p>Select a game to play:</p>
-    <div class="dashboard">
-        <!-- Link to Fill in the Blanks game -->
-        <a href="fillintheblanksindex.html" class="dashboard-button">Fill in the Blanks Game</a>
-        <!-- Link to Match the Columns game -->
-        <a href="matchthecolumn.html" class="dashboard-button">Match the Columns Game</a>
-    </div>
+    <header>
+        <h1>Game Dashboard</h1>
+    </header>
+
+    <section class="dashboard">
+        <div class="card">
+            <h3>Fill in the Blanks</h3>
+            <p>Test your knowledge by filling in the missing words.</p>
+            <a href="fillintheblanksindex.html">Play Now</a>
+        </div>
+
+        <div class="card">
+            <h3>Match the Columns</h3>
+            <p>Drag and drop items to match the correct pairs.</p>
+            <a href="matchthecolumn.html">Play Now</a>
+        </div>
+    </section>
 </body>
 </html>
